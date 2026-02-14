@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchify – AI Sketch Studio | Turn Photos into Hand-Drawn Sketches</title>
+    <meta name="description" content="Transform your photos into stunning hand-drawn sketches with Sketchify. Choose from pencil, charcoal, and ink styles with adjustable intensity.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="landing-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 32L32 8M32 8L20 8M32 8V20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 28L12 22L18 26L26 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                </svg>
+                <span>Sketchify</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="app.html" class="btn btn-primary btn-nav">Launch App</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="app.html" class="btn btn-primary">Launch App</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">Turn Photos into</span>
+                    <span class="title-line gradient-text">Hand-Drawn Sketches</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Transform your ordinary photos into stunning artistic sketches with our AI-powered studio. 
+                    Choose from multiple styles and download in high quality.
+                </p>
+                <div class="hero-cta">
+                    <a href="app.html" class="btn btn-primary btn-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                        </svg>
+                        Start Converting
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary btn-large">
+                        Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Photos Converted</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Sketch Styles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free to Use</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="sketch-preview">
+                        <div class="preview-card original">
+                            <div class="preview-label">Original</div>
+                            <div class="preview-placeholder">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <rect width="100" height="100" fill="currentColor" opacity="0.1"/>
+                                    <circle cx="35" cy="35" r="12" fill="currentColor" opacity="0.3"/>
+                                    <path d="M10 70 L40 45 L60 60 L90 35 L90 90 L10 90 Z" fill="currentColor" opacity="0.2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="preview-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                        <div class="preview-card sketch">
+                            <div class="preview-label">Sketch</div>
+                            <div class="preview-placeholder sketch-style">
+                                <svg viewBox="0 0 100 100" fill="none">
+                                    <rect width="100" height="100" fill="currentColor" opacity="0.05"/>
+                                    <circle cx="35" cy="35" r="12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-dasharray="2 2"/>
+                                    <path d="M10 70 L40 45 L60 60 L90 35" stroke="currentColor" stroke-width="1.5" fill="none" stroke-dasharray="3 2"/>
+                                    <path d="M15 85 L35 65 L55 75 L85 50" stroke="currentColor" stroke-width="1" fill="none" opacity="0.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Floating Elements -->
+                <div class="floating-element elem-1">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                        <path d="M2 2l7.586 7.586"/>
+                    </svg>
+                </div>
+                <div class="floating-element elem-2">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <div class="floating-element elem-3">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Everything You Need to Create Stunning Sketches</h2>
+                <p class="section-subtitle">Professional-grade tools at your fingertips, completely free</p>
+            </div>
+            <div class="features-grid">
+                <!-- Pencil Style -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                            <path d="M2 2l7.586 7.586"/>
+                            <circle cx="11" cy="11" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Pencil Style</h3>
+                    <p class="feature-desc">Classic pencil sketch effect with fine lines and subtle shading for a traditional look.</p>
+                </div>
+
+                <!-- Charcoal Style -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M7 12h10M7 8h10M7 16h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Charcoal Style</h3>
+                    <p class="feature-desc">Bold, dramatic strokes with deep blacks and rich textures for an artistic feel.</p>
+                </div>
+
+                <!-- Ink Style -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 011.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 5.937 17.5 2 12 2z"/>
+                            <circle cx="8" cy="10" r="1.5"/>
+                            <circle cx="12" cy="7" r="1.5"/>
+                            <circle cx="16" cy="10" r="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Ink Style</h3>
+                    <p class="feature-desc">Clean, high-contrast ink drawing effect with crisp edges and defined outlines.</p>
+                </div>
+
+                <!-- Intensity Control -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Intensity Slider</h3>
+                    <p class="feature-desc">Fine-tune the sketch intensity to achieve the perfect balance between detail and simplicity.</p>
+                </div>
+
+                <!-- Contrast Control -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a10 10 0 010 20V2z" fill="currentColor" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Contrast Control</h3>
+                    <p class="feature-desc">Adjust contrast levels to make your sketches pop with the right amount of depth.</p>
+                </div>
+
+                <!-- Download -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">HD Download</h3>
+                    <p class="feature-desc">Download your sketches in high-quality PNG format, ready for printing or sharing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Three Simple Steps to Your Perfect Sketch</h2>
+                <p class="section-subtitle">No design skills required – just upload and transform</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Upload Photo</h3>
+                    <p class="step-desc">Drag and drop or click to upload your photo. Supports JPG and PNG formats.</p>
+                </div>
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 20" fill="none">
+                        <path d="M0 10 H90 M80 5 L90 10 L80 15" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/>
+                    </svg>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 3a9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-9-9 9 9 0 019-9z"/>
+                            <path d="M12 8v4l2 2"/>
+                            <path d="M3 12h2M19 12h2M12 3v2M12 19v2"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Choose Style</h3>
+                    <p class="step-desc">Select from pencil, charcoal, or ink styles. Adjust intensity and contrast.</p>
+                </div>
+                <div class="step-connector">
+                    <svg viewBox="0 0 100 20" fill="none">
+                        <path d="M0 10 H90 M80 5 L90 10 L80 15" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/>
+                    </svg>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Download</h3>
+                    <p class="step-desc">Preview your sketch and download in high-quality PNG format.</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="app.html" class="btn btn-primary btn-large">
+                    Try It Now – It's Free
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 32L32 8M32 8L20 8M32 8V20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 28L12 22L18 26L26 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                        </svg>
+                        <span>Sketchify</span>
+                    </a>
+                    <p>Transform your photos into beautiful hand-drawn sketches with AI-powered technology.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Product</h4>
+                        <a href="app.html">Launch App</a>
+                        <a href="#features">Features</a>
+                        <a href="#how-it-works">How It Works</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <a href="#">FAQ</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sketchify. All rights reserved.</p>
+                <p>Made with ❤️ for artists everywhere</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/landing.js"></script>
+</body>
+</html>
